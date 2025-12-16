@@ -180,7 +180,7 @@ const TesseraMenu = () => {
             Tous nos produits sont préparés avec des ingrédients frais et de qualité.
           </div>
           <div className="footer-contact">
-            Service 7j/7 • 8h-22h • Alger, DZ
+            Service 7j/7 • 8h-22h • Setif, DZ
           </div>
         </div>
       </footer>
@@ -189,3 +189,5 @@ const TesseraMenu = () => {
 };
 
 export default TesseraMenu;
+
+
