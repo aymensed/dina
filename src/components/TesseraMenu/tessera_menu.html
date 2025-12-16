@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESSERA COFFEE SHOP - Menu Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Clean Color Management */
+        
+         :root {
+            --color-primary: #4E342E;
+            /* Dark Brown - Text/Accent */
+            --color-secondary: #8D6E63;
+            /* Light Brown - Price/Details */
+            --color-background: #FAF0E6;
+            /* Light Beige */
+            --color-white: #ffffff;
+        }
+        /* General Styles and Reset */
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-primary);
+            line-height: 1.6;
+            padding-bottom: 20px;
+            /* Space at the bottom */
+        }
+        /* --- Header --- */
+        
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: var(--color-background);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 5px;
+        }
+        
+        .tagline {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+        }
+        /* Placeholder for the elegant butterfly logo */
+        
+        .logo-icon {
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 2rem;
+            /* In a real design, this would be an SVG of the butterfly logo */
+        }
+        /* --- Navigation / Categories --- */
+        
+        .category-nav {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px 10px;
+            background-color: var(--color-background);
+            border-bottom: 1px solid rgba(78, 52, 46, 0.1);
+            /* Subtle separator */
+            position: sticky;
+            top: 75px;
+            /* Adjust based on header height */
+            z-index: 9;
+        }
+        
+        .category-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: var(--color-secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .category-btn.active {
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-primary);
+        }
+        /* --- Menu Content --- */
+        
+        .menu-section {
+            padding: 20px 15px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            border-left: 4px solid var(--color-secondary);
+            padding-left: 10px;
+        }
+        /* --- Item Card --- */
+        
+        .menu-item-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px dashed rgba(78, 52, 46, 0.1);
+        }
+        
+        .menu-item-card:last-child {
+            border-bottom: none;
+        }
+        
+        .item-info {
+            flex-grow: 1;
+        }
+        
+        .item-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--color-primary);
+        }
+        
+        .item-price {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--color-secondary);
+            margin-left: 15px;
+            white-space: nowrap;
+            /* Keep DZD with price */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-icon">🦋</div>
+        <div class="logo-text">TESSERA</div>
+        <div class="tagline">COFFEE SHOP</div>
+    </header>
+
+    <nav class="category-nav" id="categoryNav">
+        <button class="category-btn active" data-category="hot-coffee">Café Chaud</button>
+        <button class="category-btn" data-category="cold-drinks">Boissons Froides</button>
+        <button class="category-btn" data-category="desserts">Desserts</button>
+    </nav>
+
+    <main class="menu-content">
+        <section class="menu-section" id="hot-coffee">
+            <h2 class="section-title">Café Chaud (Hot Coffee)</h2>
+            <div class="menu-item-card">
+                <div class="item-info">
+                    <div class="item-name">Espresso</div>
+                </div>
+                <div class="item-price">250 DZD</div>
+            </div>
+            <div class="menu-item-card">
+                <div class="item-info">
+                    <div class="item-name">Cappuccino</div>
+                </div>
+                <div class="item-price">350 DZD</div>
+            </div>
+            <div class="menu-item-card">
+                <div class="item-info">
+                    <div class="item-name">Latte</div>
+                </div>
+                <div class="item-price">400 DZD</div>
+            </div>
+        </section>
+
+        <section class="menu-section hidden" id="cold-drinks">
+            <h2 class="section-title">Boissons Froides (Cold Drinks)</h2>
+            <div class="menu-item-card">
+                <div class="item-info">
+                    <div class="item-name">Iced Coffee</div>
+                </div>
+                <div class="item-price">400 DZD</div>
+            </div>
+            <div class="menu-item-card">
+                <div class="item-info">
+                    <div class="item-name">Iced Latte</div>
+                </div>
+                <div class="item-price">450 DZD</div>
+            </div>
+        </section>
+
+        <section class="menu-section hidden" id="desserts">
+            <h2 class="section-title">Desserts</h2>
+            <div class="menu-item-card">
+                <div class="item-info">
+                    <div class="item-name">Gâteau au Chocolat (Chocolate Cake)</div>
+                </div>
+                <div class="item-price">300 DZD</div>
+            </div>
+            <div class="menu-item-card">
+                <div class="item-info">
+                    <div class="item-name">Croissant</div>
+                </div>
+                <div class="item-price">200 DZD</div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const categoryNav = document.getElementById('categoryNav');
+        const sections = document.querySelectorAll('.menu-section');
+
+        // Initial state: hide all sections except the first one
+        sections.forEach(section => {
+            if (section.id !== 'hot-coffee') {
+                section.classList.add('hidden');
+            }
+        });
+
+        // Event listener for navigation buttons
+        categoryNav.addEventListener('click', (event) => {
+            const button = event.target;
+            if (button.classList.contains('category-btn')) {
+                const targetId = button.getAttribute('data-category');
+
+                // 1. Update Active Button State
+                document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // 2. Show/Hide Sections
+                sections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
